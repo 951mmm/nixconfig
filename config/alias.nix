@@ -43,5 +43,6 @@ in
     # qemu
     qe-win10 = "${win10-conf-path}";
     qe-win10-off = "pkill -f \"qemu.* -name windows-10\"";
+
   };
 }

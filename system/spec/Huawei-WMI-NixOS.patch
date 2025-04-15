@@ -1,0 +1,25 @@
+diff --git a/.vscode/settings.json b/.vscode/settings.json
+index ca43fd5..f1e468e 100644
+--- a/.vscode/settings.json
++++ b/.vscode/settings.json
+@@ -1,5 +1,6 @@
+ {
+     "C_Cpp.workspaceSymbols": "All",
+     "C_Cpp.default.compileCommands": "compile_commands.json",
+-    "C_Cpp.default.intelliSenseMode": "gcc-x64"
++    "C_Cpp.default.intelliSenseMode": "gcc-x64",
++    "editor.formatOnSave": false
+ }
+\ No newline at end of file
+diff --git a/Makefile b/Makefile
+index e14abb7..83cabc3 100644
+--- a/Makefile
++++ b/Makefile
+@@ -8,7 +8,6 @@ modules:
+ 
+ install:
+ 	make -C $(KERN_SRC) M=$(PWD) modules_install
+-	depmod -a
+ 
+ clean:
+ 	make -C $(KERN_SRC) M=$(PWD) clean

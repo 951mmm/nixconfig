@@ -17,17 +17,21 @@
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
         serayuzgur.crates
+
         # c
         dizy.lex-flex-yacc-bison
+
+        # vue
+        vue.volar
       ]
       ++ (with pkgs.vscode-marketplace; [
         ms-vscode-remote.remote-ssh
         ms-vscode-remote.remote-ssh-edit
         ms-vscode-remote.vscode-remote-extensionpack
         ms-python.python
-
+        ms-vscode.cpptools
         aooiu.any-reader
-
+        jcbuisson.vue
       ]);
     userSettings = {
       "window.titleBarStyle" = "custom";

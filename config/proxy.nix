@@ -8,7 +8,7 @@ let
   mkConfig =
     host: port:
     let
-      http-proxy = "${host}:${builtins.toString port}";
+      http-proxy = "http://${host}:${builtins.toString port}";
       no-proxy = "127.0.0.1,localhost,internal.domain";
       default-proxy = {
         host = "http://${host}";
@@ -26,7 +26,11 @@ let
       home-manager.users.ww.dconf.settings = {
         "system/proxy/mode" = {
           mode = "manual";
-          ignore-hosts = "['localhost', '127.0.0.0/8', '::1']";
+          ignore-hosts = [
+            "localhost"
+            "127.0.0.0/8"
+            "::1"
+          ];
         };
         "system/proxy/http" = default-proxy;
         "system/proxy/https" = default-proxy;

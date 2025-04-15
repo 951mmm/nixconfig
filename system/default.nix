@@ -1,7 +1,15 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+let
+  huawei-wmi = config.boot.kernelPackages.callPackage ./spec/huawei-wmi.nix { };
+in
 {
   imports = [
     ./docker.nix
+    ./gnome.nix
+  ];
+  # kmod spec
+  boot.extraModulePackages = [
+    huawei-wmi
   ];
   # zram
   zramSwap.enable = true;
@@ -43,6 +51,7 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     # mihomo
     wget
-
+    acpica-tools
+    flameshot
   ];
 }

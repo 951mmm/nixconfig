@@ -1,3 +1,6 @@
+let
+  dconf-keybindings = import ./shortcut;
+in
 {
   dconf.settings = {
     "org/gnome/shell" = {
@@ -9,12 +12,12 @@
 
       ];
       disabled-extensions = [ ];
-    };
 
+    };
     "org/gnome/Console" = {
       custom-font = "Monospace 12";
       use-system-font = false;
     };
 
-  };
+  } // dconf-keybindings;
 }

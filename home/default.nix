@@ -31,7 +31,6 @@
         wpsoffice-cn
         siyuan
         sqlitebrowser
-
       ]
       ++ (with gnomeExtensions; [
         hibernate-status-button
