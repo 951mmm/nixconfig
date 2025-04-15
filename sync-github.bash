@@ -7,9 +7,14 @@ commit_msg=$(
     echo "generation: "$generation""
 )
 
-rsync -ahPv --exclude-from .gitignore --delete * "$config_bak"
+uuid=$(cat /proc/sys/kernel/random/uuid)
+tmp_git="/tmp/$uuid-git"
+mv "$config_bak/.git" "$tmp_git"
+rsync -ahPv --exclude-from .gitignore --include .gitignore --delete . "$config_bak"
+
 cd "$config_bak"
+mv "$tmp_git" .git
 git add .
 git commit -m "$commit_msg"
-git push github master
+git push origin master
 cd -
