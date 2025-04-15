@@ -7,7 +7,7 @@ commit_msg=$(
     echo "generation: "$generation""
 )
 
-rsync -ahPv --delete --exclude-from .gitignore --include .gitignore * "$config_bak"
+rsync -ahPv --exclude-from .gitignore --delete * "$config_bak"
 cd "$config_bak"
 git add .
 git commit -m "$commit_msg"
