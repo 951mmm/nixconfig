@@ -1,4 +1,5 @@
-#! /etc/profiles/per-user/ww/bin/bash 
+#! /usr/bin/env bash
+# 不喜欢dirty的提示，仅仅用作备份
 read -p "extra commit msg:" extra_msg
 config_bak=../nixconfig.bak.d
 generation=$(nixos-rebuild list-generations | awk 'NR == 2{print $1}' | tr -d '\n\b')

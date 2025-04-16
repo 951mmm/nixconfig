@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   huawei-wmi = config.boot.kernelPackages.callPackage ./spec/huawei-wmi.nix { };
+  huawei-wmi-kbd-udev = builtins.readFile ./spec/99-Huawei.hwdb;
 in
 {
   imports = [
@@ -11,6 +12,11 @@ in
   boot.extraModulePackages = [
     huawei-wmi
   ];
+
+  # hwdb
+  services.udev.extraHwdb = ''
+    ${huawei-wmi-kbd-udev}
+  '';
   # zram
   zramSwap.enable = true;
 
@@ -51,7 +57,6 @@ in
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     # mihomo
     wget
-    acpica-tools
     flameshot
   ];
 }

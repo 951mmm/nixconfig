@@ -31,6 +31,8 @@
         wpsoffice-cn
         siyuan
         sqlitebrowser
+        showmethekey
+        kooha
       ]
       ++ (with gnomeExtensions; [
         hibernate-status-button

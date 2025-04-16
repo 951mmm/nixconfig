@@ -1,7 +1,8 @@
 with import ./lib.nix;
 (mkDconf [
   (mkKeybinding "terminal" "kgx" "<Control><Alt>t")
-  (mkKeybinding "flameshot" "${shortcut-script-dir}/flameshot-gui.sh" "Print")
+  (mkKeybinding "flameshot" ./flameshot-gui.sh "Print")
+  (mkKeybinding "power-unlock" ./power-unlock.sh "Launch1")
 ])
 // {
   "org/gnome/shell/keybindings" = {
