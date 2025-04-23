@@ -57,6 +57,17 @@ in
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     # mihomo
     wget
+    acpid
+    wl-clipboard
+
+    # gui
     flameshot
+    waydroid
   ];
+
+  # waydroid
+  virtualisation.waydroid.enable = true;
+
+  # firewall
+  # networking.firewall.enable = true;
 }

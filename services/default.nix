@@ -1,8 +1,9 @@
 { pkgs, ... }:
 {
   imports = [
-    ./mihomo.nix
+    ./mihomo
     ./suspend-and-hibernate.nix
+    ./acpid.nix
   ];
   services.postgresql = {
     enable = true;
@@ -12,4 +13,5 @@
       grant all privileges on database cesium to ww;
     '';
   };
+
 }

@@ -15,7 +15,6 @@
         lsof
         pkgs.unstable.quickemu
         libnotify
-        wl-clipboard
 
         # dev cli
         gnumake42
@@ -33,6 +32,11 @@
         sqlitebrowser
         showmethekey
         kooha
+        telegram-desktop
+        discord-ptb
+        floorp
+        blender
+        drawio
       ]
       ++ (with gnomeExtensions; [
         hibernate-status-button
