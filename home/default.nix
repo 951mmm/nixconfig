@@ -13,7 +13,6 @@
       [
         # cli
         lsof
-        pkgs.unstable.quickemu
         libnotify
 
         # dev cli
@@ -38,6 +37,11 @@
         blender
         drawio
       ]
+      ++ (with pkgs.unstable; [
+        quickemu
+        navicat-premium
+        cherry-studio
+      ])
       ++ (with gnomeExtensions; [
         hibernate-status-button
         custom-command-toggle
