@@ -25,7 +25,6 @@
         rust-analyzer
         # gui
         microsoft-edge
-        qq
         wpsoffice-cn
         siyuan
         sqlitebrowser
@@ -41,6 +40,7 @@
         quickemu
         navicat-premium
         cherry-studio
+        qq
       ])
       ++ (with gnomeExtensions; [
         hibernate-status-button
