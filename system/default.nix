@@ -2,6 +2,8 @@
 let
   huawei-wmi = config.boot.kernelPackages.callPackage ./spec/huawei-wmi.nix { };
   huawei-wmi-kbd-udev = builtins.readFile ./spec/99-Huawei.hwdb;
+
+  zh-fonts = pkgs.callPackage ./zh-fonts.nix { inherit pkgs; };
 in
 {
   imports = [
@@ -30,12 +32,23 @@ in
   # 中文字体
   fonts = {
     packages = with pkgs; [
-      noto-fonts
+      fira-code-nerdfont
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
+      noto-fonts-emoji
+      zh-fonts
     ];
+    fontconfig = {
+      antialias = true;
+      hinting.enable = true;
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+        monospace = [ "FiraCode Nerd Font" ];
+        sansSerif = [ "Noto Sans CJK SC" ];
+        serif = [ "Noto Serif CJK SC" ];
+      };
+    };
   };
-
   # 输入法
   i18n.inputMethod = {
     enable = true;
