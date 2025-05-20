@@ -36,6 +36,8 @@
         floorp
         blender
         drawio
+        remmina
+        wechat-uos
       ]
       ++ (with pkgs.unstable; [
         quickemu
